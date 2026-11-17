@@ -1,0 +1,299 @@
+/* ========================================
+   AJU & NAAJI — BOTANICAL MOTION SYSTEM
+   ======================================== */
+
+[data-botanical] {
+  position: relative;
+  isolation: isolate;
+}
+
+[data-botanical-content] {
+  position: relative;
+  z-index: 2;
+}
+
+/* Decorative layer */
+.botanical-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.botanical-vine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: min(36%, 270px);
+  height: 100%;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.botanical-vine--left {
+  left: -1%;
+}
+
+.botanical-vine--right {
+  right: -1%;
+  transform: scaleX(-1);
+}
+
+.botanical-vine svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Vine paths draw progressively */
+.botanical-vine .draw-path {
+  fill: none;
+  stroke: #8FA88D;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: var(--draw-length, 1000);
+  stroke-dashoffset: var(--draw-length, 1000);
+  transition:
+    stroke-dashoffset 3.8s cubic-bezier(0.65, 0, 0.35, 1);
+  transition-delay: var(--draw-delay, 0s);
+}
+
+.botanical-overlay.is-visible .draw-path {
+  stroke-dashoffset: 0;
+}
+
+/* Leaves unfold from their attachment points */
+.botanical-leaf {
+  fill: #A8BDA7;
+  stroke: #7D987D;
+  stroke-width: 0.8;
+  opacity: 0;
+  transform: scale(0.08) rotate(-20deg);
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transition:
+    opacity 650ms ease,
+    transform 850ms cubic-bezier(0.2, 0.75, 0.25, 1);
+  transition-delay: var(--delay, 0s);
+}
+
+.botanical-overlay.is-visible .botanical-leaf {
+  opacity: 0.96;
+  transform: scale(1) rotate(0deg);
+}
+
+/* Flowers bloom petal by petal */
+.flower-petal {
+  fill: #FFFDF7;
+  stroke: #D5C8A7;
+  stroke-width: 0.65;
+  opacity: 0;
+  transform: scale(0.05);
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transition:
+    opacity 600ms ease,
+    transform 750ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--delay, 0s);
+}
+
+.flower-center {
+  fill: #B69A70;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  transition-delay: 4.8s;
+}
+
+.botanical-overlay.is-visible .flower-petal {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.botanical-overlay.is-visible .flower-center {
+  opacity: 1;
+}
+
+/* Falling pastel green petals */
+.petal-layer,
+.petal-stream {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.petal-stream {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+}
+
+.botanical-petal {
+  position: absolute;
+  top: -8%;
+  left: var(--left);
+  width: var(--size, 14px);
+  height: auto;
+  opacity: 0;
+  animation: botanical-petal-fall var(--duration, 16s)
+    cubic-bezier(0.35, 0.05, 0.65, 0.95) var(--delay, 0s) infinite;
+  will-change: transform, opacity;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(52, 76, 59, 0.08));
+}
+
+.botanical-petal svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.botanical-petal path.petal-body,
+.botanical-petal path:not(.petal-vein) {
+  fill: var(--petal-fill, #C9D8C6);
+  stroke: var(--petal-stroke, #8FA88D);
+  stroke-width: 0.75;
+}
+
+.botanical-petal path.petal-vein {
+  fill: none;
+  stroke: var(--petal-vein, rgba(74, 102, 72, 0.35));
+  stroke-width: 0.5;
+  stroke-linecap: round;
+}
+
+@keyframes botanical-petal-fall {
+  0% {
+    transform: translate3d(0, -60px, 0) rotate(0deg) scale(0.95);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0.88;
+  }
+
+  32% {
+    transform: translate3d(calc(var(--drift, 26px) * 0.45), 32vh, 0)
+      rotate(calc(var(--spin, 200deg) * 0.35)) scale(1.02);
+  }
+
+  64% {
+    transform: translate3d(calc(var(--drift, 26px) * -0.35), 68vh, 0)
+      rotate(calc(var(--spin, 200deg) * 0.7)) scale(0.96);
+    opacity: 0.82;
+  }
+
+  88% {
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: translate3d(var(--drift, 26px), calc(100vh + 80px), 0)
+      rotate(var(--spin, 200deg)) scale(0.92);
+    opacity: 0;
+  }
+}
+
+/* Scroll entrance */
+html.motion-ready [data-reveal] {
+  opacity: 0;
+  translate: 0 20px;
+  filter: blur(3px);
+  transition:
+    opacity 750ms ease,
+    translate 850ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 750ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+html.motion-ready [data-reveal].is-visible {
+  opacity: 1;
+  translate: 0 0;
+  filter: blur(0);
+}
+
+/* Gentle ambient leaf movement after the initial reveal */
+@keyframes botanical-leaf-sway {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1) rotate(3deg);
+  }
+}
+
+.botanical-overlay.is-visible .botanical-leaf {
+  animation: botanical-leaf-sway 7s ease-in-out
+    var(--sway-delay, 0s) infinite;
+}
+
+/* Keep ambient effects restrained on small screens */
+@media (max-width: 600px) {
+  .botanical-vine {
+    width: 28%;
+    opacity: 0.72;
+  }
+
+  .botanical-petal {
+    width: 11px;
+  }
+
+  html.motion-ready [data-reveal] {
+    translate: 0 14px;
+    filter: blur(1.5px);
+  }
+}
+
+/* HoverBloom botanical canvas integration */
+.hover-bloom-canvas-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.hero-arch-card > *:not(.hover-bloom-canvas-wrap),
+.invitation-box > *:not(.hover-bloom-canvas-wrap),
+.closing-box > *:not(.hover-bloom-canvas-wrap) {
+  position: relative;
+  z-index: 3;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .botanical-petal,
+  .petal-layer,
+  .petal-stream {
+    display: none !important;
+    animation: none !important;
+  }
+
+  .botanical-vine .draw-path {
+    transition: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  .botanical-leaf,
+  .flower-petal,
+  .flower-center {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  html.motion-ready [data-reveal] {
+    transition: none !important;
+    opacity: 1 !important;
+    translate: none !important;
+    filter: none !important;
+  }
+}
