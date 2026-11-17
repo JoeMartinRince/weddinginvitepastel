@@ -61,6 +61,28 @@ Open your browser and navigate to:
 
 ---
 
+## ⚡ Deployment on Vercel
+
+The website is fully optimized for one-click deployment to **Vercel**:
+
+### Option 1: Import via Vercel Dashboard (Recommended)
+1. Go to [Vercel New Project](https://vercel.com/new).
+2. Connect your GitHub account and import `JoeMartinRince/weddinginvitepastel`.
+3. Vercel automatically detects [`vercel.json`](vercel.json) and configures the static deployment.
+4. Click **Deploy**. Your custom wedding invitation will be live on a global CDN within seconds!
+
+### Option 2: Deploy via Vercel CLI
+```bash
+npx vercel
+```
+
+### Vercel Optimizations Included:
+- **[`vercel.json`](vercel.json)**: Configures clean URLs, automatic `.mjs` ES Module MIME types (`application/javascript`), Service Worker scope authorization (`Service-Worker-Allowed: /`), and immutable CDN caching headers (`max-age=31536000`) for all assets.
+- **[`.vercelignore`](.vercelignore)**: Keeps the production deployment bundle ultra-lean (<15MB) by excluding local QA screenshots and automated test scripts while preserving all client assets.
+- **[`package.json`](package.json)**: Provides standard scripts for building and QA testing.
+
+---
+
 ## 🧪 Testing & Verification
 
 The repository includes comprehensive automated QA suites powered by Chrome DevTools Protocol (CDP):

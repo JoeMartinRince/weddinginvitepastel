@@ -1,0 +1,17 @@
+# Ignore root test screenshots to keep deployment payload light & fast
+/*.png
+!/assets/**
+
+# Ignore test and QA harnesses
+test_*.js
+qa_verify.js
+capture_*.js
+verify_*.js
+check_paths.js
+take_screenshot.js
+update_script_main.js
+build_and_push_30_commits.js
+
+# Ignore template backups and reference sources
+index.html.backup
+HoverBloom.actual.js

@@ -1,0 +1,14 @@
+{
+  "name": "wedding-invite-pastel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Luxury Wedding Invitation Website for Aju & Naaji",
+  "scripts": {
+    "build": "node generate_index.js",
+    "test": "node qa_verify.js",
+    "start": "npx serve . -l 8080"
+  },
+  "keywords": ["wedding-invitation", "framer", "botanical", "hoverbloom"],
+  "author": "Joe Martin Rince",
+  "license": "UNLICENSED"
+}
