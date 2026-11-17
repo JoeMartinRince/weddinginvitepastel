@@ -1,0 +1,15 @@
+<svg viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <ellipse cx="60" cy="35" rx="26" ry="32" stroke="#B69A70" stroke-width="1"/>
+  <ellipse cx="60" cy="35" rx="23" ry="29" stroke="#B69A70" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <path d="M30 48 C28 42, 28 32, 33 22 C34 27, 36 30, 34 36" stroke="#8FA88D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <path d="M28 38 C24 37, 24 33, 27 33 C29 33, 30 36, 28 38 Z" fill="#8FA88D"/>
+  <path d="M29 30 C25 28, 26 24, 29 25 C31 26, 31 28, 29 30 Z" fill="#8FA88D"/>
+  <path d="M32 23 C30 19, 33 17, 35 19 C36 21, 34 23, 32 23 Z" fill="#8FA88D"/>
+  <path d="M90 48 C92 42, 92 32, 87 22 C86 27, 84 30, 86 36" stroke="#8FA88D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <path d="M92 38 C96 37, 96 33, 93 33 C91 33, 90 36, 92 38 Z" fill="#8FA88D"/>
+  <path d="M91 30 C95 28, 94 24, 91 25 C89 26, 89 28, 91 30 Z" fill="#8FA88D"/>
+  <path d="M88 23 C90 19, 87 17, 85 19 C84 21, 86 23, 88 23 Z" fill="#8FA88D"/>
+  <text x="47" y="41" font-family="'Cormorant Garamond', 'Times New Roman', serif" font-size="18" fill="#344C3B" font-weight="500">A</text>
+  <line x1="60" y1="21" x2="60" y2="47" stroke="#B69A70" stroke-width="0.8"/>
+  <text x="66" y="41" font-family="'Cormorant Garamond', 'Times New Roman', serif" font-size="18" fill="#344C3B" font-weight="500">N</text>
+</svg>

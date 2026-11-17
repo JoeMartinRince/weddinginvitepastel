@@ -1,0 +1,6 @@
+<svg viewBox="0 0 800 950" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Outer Arch -->
+  <path d="M 60 950 L 60 420 C 60 270, 220 200, 355 130 C 385 112, 400 70, 400 70 C 400 70, 415 112, 445 130 C 580 200, 740 270, 740 420 L 740 950" stroke="#B69A70" stroke-width="1.5" opacity="0.75"/>
+  <!-- Inner Arch dashed -->
+  <path d="M 75 950 L 75 425 C 75 285, 230 218, 360 148 C 385 132, 400 95, 400 95 C 400 95, 415 132, 440 148 C 570 218, 725 285, 725 425 L 725 950" stroke="#B69A70" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.6"/>
+</svg>
