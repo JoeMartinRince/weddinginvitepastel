@@ -1,0 +1,8 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <circle cx="12.5" cy="17" r="7.5" stroke="#B69A70" stroke-width="1.3"/>
+  <circle cx="19.5" cy="17" r="7.5" stroke="#344C3B" stroke-width="1.3"/>
+  <!-- Leaf flourish above -->
+  <path d="M16 8 C14 5.5, 18 5.5, 16 8 Z" fill="#8FA88D"/>
+  <path d="M12.5 10 C10.5 8, 12.5 7, 13.5 9 Z" fill="#8FA88D"/>
+  <path d="M19.5 10 C21.5 8, 19.5 7, 18.5 9 Z" fill="#8FA88D"/>
+</svg>
