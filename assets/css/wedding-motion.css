@@ -1,0 +1,207 @@
+/* ==========================================================================
+   WEDDING MOTION STYLESHEET — AJU & NAAJI
+   Natural animated botanical vines, unfolding leaves, blooming flowers & scroll reveals
+   ========================================================================== */
+
+[data-wedding-botanical] {
+  position: relative;
+  isolation: isolate;
+}
+
+[data-wedding-content] {
+  position: relative;
+  z-index: 2;
+}
+
+.wedding-botanical-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wedding-vine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(85px, 22%, 220px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.wedding-vine.left {
+  left: 0;
+}
+
+.wedding-vine.right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.wedding-vine svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wedding-stem {
+  fill: none;
+  stroke: #8FA88D;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: var(--path-length, 1000);
+  stroke-dashoffset: var(--path-length, 1000);
+  transition: stroke-dashoffset 4s cubic-bezier(.65,0,.35,1);
+  transition-delay: var(--path-delay, 0ms);
+}
+
+.wedding-botanical-layer.is-visible .wedding-stem {
+  stroke-dashoffset: 0;
+}
+
+.wedding-leaf {
+  opacity: 0;
+  transform: scale(.08) rotate(-20deg);
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transition:
+    opacity .7s ease,
+    transform .85s cubic-bezier(.2,.75,.25,1);
+  transition-delay: var(--delay, 0ms);
+}
+
+.wedding-botanical-layer.is-visible .wedding-leaf {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+.wedding-flower-petal {
+  fill: #F8F7F1;
+  stroke: #C9D8C6;
+  stroke-width: .7;
+  opacity: 0;
+  transform: scale(.05);
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transition:
+    opacity .65s ease,
+    transform .75s cubic-bezier(.2,.8,.2,1);
+  transition-delay: var(--delay, 0ms);
+}
+
+.wedding-botanical-layer.is-visible .wedding-flower-petal {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.wedding-flower-center {
+  fill: #B69A70;
+  opacity: 0;
+  transition: opacity .5s ease;
+  transition-delay: 3.8s;
+}
+
+.wedding-botanical-layer.is-visible .wedding-flower-center {
+  opacity: 1;
+}
+
+.wedding-petal-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wedding-falling-petal {
+  position: absolute;
+  top: -35px;
+  left: var(--left);
+  width: var(--size);
+  height: 26px;
+  border-radius: 70% 20% 70% 20%;
+  background: #E8EBDD;
+  opacity: 0;
+  animation: wedding-fall var(--duration)
+    var(--delay) linear infinite;
+}
+
+@keyframes wedding-fall {
+  0% {
+    transform: translate3d(0,-20px,0) rotate(0deg);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: .65;
+  }
+
+  85% {
+    opacity: .4;
+  }
+
+  100% {
+    transform: translate3d(var(--drift),105vh,0)
+      rotate(var(--rotation));
+    opacity: 0;
+  }
+}
+
+/* Scroll reveals */
+html.wedding-motion-ready [data-wedding-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(2px);
+  transition:
+    opacity .75s ease,
+    transform .85s cubic-bezier(.2,.7,.25,1),
+    filter .75s ease;
+  transition-delay: var(--reveal-delay,0ms);
+}
+
+html.wedding-motion-ready
+[data-wedding-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+@media(max-width:600px) {
+  .wedding-vine {
+    width: 25%;
+    opacity: .65;
+  }
+
+  .wedding-falling-petal {
+    width: 8px;
+  }
+}
+
+/* Accessibility */
+@media(prefers-reduced-motion:reduce) {
+  .wedding-falling-petal {
+    display: none !important;
+  }
+
+  .wedding-stem {
+    transition: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  .wedding-leaf,
+  .wedding-flower-petal,
+  .wedding-flower-center {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  html.wedding-motion-ready [data-wedding-reveal] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

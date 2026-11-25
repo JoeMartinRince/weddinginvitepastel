@@ -1,9 +1,10 @@
 const { spawn } = require('child_process');
 
 async function testNavigation() {
+  const port = 9488;
   const chrome = spawn('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', [
     '--headless=new',
-    '--remote-debugging-port=9222',
+    `--remote-debugging-port=${port}`,
     '--user-data-dir=' + process.env.TEMP + '\\chrome-nav-test-' + Date.now(),
     '--disable-gpu',
     '--window-size=390,844',
@@ -13,7 +14,7 @@ async function testNavigation() {
   await new Promise(r => setTimeout(r, 2000));
 
   try {
-    const res = await fetch('http://127.0.0.1:9222/json/list');
+    const res = await fetch(`http://127.0.0.1:${port}/json/list`);
     const targets = await res.json();
     const page = targets.find(t => t.type === 'page');
     const ws = new WebSocket(page.webSocketDebuggerUrl);

@@ -11,7 +11,9 @@ async function runQA() {
   const forbidden = [
     'Isabela', 'Mateo', 'Fiesole', 'Villa Sorella', 'Tuscany',
     'Prosecco', '20 June 2027', 'Florence', 'Bologna', 'Pensione Aurora',
-    'Rossi', 'Bianchi', 'Design by Flo', 'designbyflor.art'
+    'Rossi', 'Bianchi', 'Design by Flo', 'designbyflor.art',
+    'AN INTIMATE CELEBRATION ACROSS TWO HISTORIC CITIES OF KERALA',
+    'Kozhikode, Kerala', 'Kannur, Kerala', 'FIND THE CELEBRATION'
   ];
 
   for (const term of forbidden) {
@@ -32,7 +34,7 @@ async function runQA() {
     'TOGETHER WITH OUR FAMILIES, WE JOYFULLY INVITE YOU TO CELEBRATE THE WEDDING OF AJU & NAJI.',
     'ABDUL NASER AM & NAJUMUNISHA',
     'ABDUL RAUF CH & RUBEENA LV',
-    'THE CELEBRATION',
+    'THE CELEBRATIONS',
     'TWO DAYS. TWO GATHERINGS. ONE JOYFUL OCCASION.',
     'NIKKAH',
     '11:00 AM – 3:00 PM',
@@ -45,8 +47,8 @@ async function runQA() {
     'GROOM\'S RESIDENCE',
     'RUBEENAS CHILLIKUNNU ROAD, CHALAD, KANNUR 14',
     'https://maps.google.com/?q=11.876903,75.353790',
-    'FIND THE CELEBRATION',
-    'WE LOOK FORWARD TO CELEBRATING WITH YOU'
+    'WE LOOK FORWARD TO CELEBRATING WITH YOU',
+    '02 JANUARY 2027 · 11:00 AM IST'
   ];
 
   for (const req of required) {

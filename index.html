@@ -28,8 +28,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Pinyon+Script&display=swap" rel="stylesheet">
 
-    <!-- Botanical Motion CSS -->
-    <link rel="stylesheet" href="assets/css/botanical-motion.css">
+    <!-- Wedding Motion Stylesheet -->
+    <link rel="stylesheet" href="assets/css/wedding-motion.css">
 
     <style data-framer-font-css>
 ${fontFaceCss}
@@ -1370,7 +1370,8 @@ ${fontFaceCss}
                 <a href="#celebrations">Celebrations</a>
                 <a href="#nikkah">Nikkah</a>
                 <a href="#reception">Reception</a>
-                <a href="#locations">Locations</a>
+                <a href="#celebrations">Locations</a>
+                <a href="#countdown">Countdown</a>
             </nav>
 
             <button class="nav-toggle-btn" id="mobile-hamburger" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
@@ -1403,7 +1404,8 @@ ${fontFaceCss}
                 <li><a href="#celebrations" class="drawer-link">Celebrations</a></li>
                 <li><a href="#nikkah" class="drawer-link">Nikkah</a></li>
                 <li><a href="#reception" class="drawer-link">Reception</a></li>
-                <li><a href="#locations" class="drawer-link">Locations</a></li>
+                <li><a href="#celebrations" class="drawer-link">Locations</a></li>
+                <li><a href="#countdown" class="drawer-link">Countdown</a></li>
             </ul>
         </nav>
 
@@ -1414,13 +1416,13 @@ ${fontFaceCss}
     <div id="main" data-framer-name="PageWrapper">
 
         <!-- ==================== 2. HERO SECTION ==================== -->
-        <section class="hero-section" id="hero" data-framer-name="Hero" data-botanical="hero">
+        <section class="hero-section" id="hero" data-framer-name="Hero" data-wedding-botanical="hero">
             <div class="hero-bg-accent"></div>
             <img src="assets/floral_top_left.png" alt="" class="botanical-corner botanical-tl" loading="eager" aria-hidden="true">
             <img src="assets/floral_bottom_right.png" alt="" class="botanical-corner botanical-br" loading="eager" aria-hidden="true">
 
             <!-- Centered Ornamental Arch Card -->
-            <div class="hero-arch-card" data-botanical-content>
+            <div class="hero-arch-card" data-wedding-content data-wedding-reveal>
                 <div class="hero-arch-inner-border"></div>
 
                 <!-- Monogram Emblem -->
@@ -1463,10 +1465,10 @@ ${fontFaceCss}
         </section>
 
         <!-- ==================== 3. INVITATION & FAMILY SECTION ==================== -->
-        <section class="content-section" id="invitation" data-framer-name="Invitation" data-botanical="invitation">
-            <div class="invitation-card-wrap" data-botanical-content>
+        <section class="content-section" id="invitation" data-framer-name="Invitation" data-wedding-botanical="invitation">
+            <div class="invitation-card-wrap" data-wedding-content>
                 <!-- Central Card Box -->
-                <div class="invitation-box" data-reveal="up">
+                <div class="invitation-box" data-wedding-reveal>
                     <div class="invitation-inner-border"></div>
 
                     <img src="assets/monogram.svg" alt="" class="invitation-badge" aria-hidden="true">
@@ -1479,286 +1481,198 @@ ${fontFaceCss}
 
                     <p class="invitation-names">AJU &amp; NAAJI</p>
 
-                    <p class="invitation-tagline">AN INTIMATE CELEBRATION ACROSS TWO HISTORIC CITIES OF KERALA</p>
-
                     <img src="assets/divider_ornament.svg" alt="" class="invitation-divider" aria-hidden="true">
                 </div>
 
                 <!-- Family Lineage Block -->
-                <div class="family-grid" data-reveal="up" data-reveal-delay="200">
-                    <div class="family-col" data-reveal="up" data-reveal-delay="300">
+                <div class="family-grid" data-wedding-reveal>
+                    <div class="family-col">
                         <p class="family-role">BRIDE'S PARENTS</p>
                         <p class="family-name">ABDUL NASER AM &amp; NAJUMUNISHA</p>
-                        <p class="family-location">Kozhikode, Kerala</p>
                     </div>
 
                     <div class="family-vertical-divider" aria-hidden="true"></div>
 
-                    <div class="family-col" data-reveal="up" data-reveal-delay="450">
+                    <div class="family-col">
                         <p class="family-role">GROOM'S PARENTS</p>
                         <p class="family-name">ABDUL RAUF CH &amp; RUBEENA LV</p>
-                        <p class="family-location">Kannur, Kerala</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 4. TIMELINE ==================== -->
-        <section class="content-section" id="celebrations" data-framer-name="Celebrations" data-botanical="timeline">
-            <div class="celebration-content-wrap" data-botanical-content>
-                <div class="section-header" data-reveal="up">
+        <!-- ==================== 4. THE CELEBRATIONS ==================== -->
+        <section class="content-section" id="celebrations" data-framer-name="Celebrations" data-wedding-botanical="celebration">
+            <div class="celebration-content-wrap" data-wedding-content>
+                <div class="section-header" data-wedding-reveal>
                     <span class="section-script-tag">The Gatherings</span>
-                    <h2 class="section-title">THE CELEBRATION</h2>
+                    <h2 class="section-title">THE CELEBRATIONS</h2>
                     <p class="section-subtitle">TWO DAYS. TWO GATHERINGS. ONE JOYFUL OCCASION.</p>
                     <img src="assets/divider_ornament.svg" alt="" class="section-divider-flower" aria-hidden="true">
                 </div>
 
-                <div class="timeline-section-wrap">
-                    <div class="timeline-container">
-                        <div class="timeline-grid">
-                            <!-- DAY 1: NIKKAH -->
-                            <div class="timeline-card" data-reveal="up" data-reveal-delay="150">
-                                <span class="timeline-badge">DAY 01 &bull; KOZHIKODE</span>
-                                <h3 class="timeline-event-title">NIKKAH</h3>
-                                <p class="timeline-date">SATURDAY, 02 JANUARY 2027</p>
-                                <p class="timeline-time">11:00 AM – 3:00 PM</p>
-                                <div class="timeline-divider"></div>
-                                <p class="timeline-location-title">ROYAL ALLIANCE AUDITORIUM</p>
-                                <p class="timeline-city">Mannarpadam, Feroke, Kozhikode</p>
+                <div class="events-grid">
+                    <!-- EVENT 01: NIKKAH -->
+                    <article class="event-card event-card-nikkah" id="nikkah" data-wedding-reveal>
+                        <div class="event-card-header">
+                            <img src="assets/icon_dome.svg" alt="" class="event-card-icon" aria-hidden="true">
+                            <span class="event-tag">EVENT 01 &bull; THE CEREMONY</span>
+                            <h3 class="event-name">NIKKAH</h3>
+                        </div>
+
+                        <div class="event-card-body">
+                            <div class="event-details-list">
+                                <!-- Date -->
+                                <div class="detail-row">
+                                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <div class="detail-content">
+                                        <p class="detail-label">DATE</p>
+                                        <p class="detail-value">Saturday, 02 January 2027</p>
+                                    </div>
+                                </div>
+
+                                <!-- Time -->
+                                <div class="detail-row">
+                                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    <div class="detail-content">
+                                        <p class="detail-label">TIME</p>
+                                        <p class="detail-value">11:00 AM – 3:00 PM</p>
+                                    </div>
+                                </div>
+
+                                <!-- Venue -->
+                                <div class="detail-row">
+                                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    <div class="detail-content">
+                                        <p class="detail-label">VENUE</p>
+                                        <p class="detail-value venue-name">ROYAL ALLIANCE AUDITORIUM</p>
+                                        <p class="detail-value venue-address">
+                                            KADALUNDI ROAD, MANNARPADAM, FEROKE, KOZHIKODE, 673631
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <!-- DAY 2: RECEPTION -->
-                            <div class="timeline-card" data-reveal="up" data-reveal-delay="300">
-                                <span class="timeline-badge">DAY 02 &bull; KANNUR</span>
-                                <h3 class="timeline-event-title">RECEPTION</h3>
-                                <p class="timeline-date">SUNDAY, 03 JANUARY 2027</p>
-                                <p class="timeline-time">11:30 AM – 8:00 PM</p>
-                                <div class="timeline-divider"></div>
-                                <p class="timeline-location-title">GROOM'S RESIDENCE</p>
-                                <p class="timeline-city">Rubeenas, Chillikunnu Road, Chalad, Kannur</p>
-                            </div>
+                            <!-- Action Button -->
+                            <a href="https://maps.app.goo.gl/1vAmSiUuUUooR2TE8" target="_blank" rel="noopener noreferrer" class="event-action-btn">
+                                <span>VIEW ON GOOGLE MAPS</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
                         </div>
-                    </div>
+                    </article>
+
+                    <!-- EVENT 02: RECEPTION -->
+                    <article class="event-card event-card-reception" id="reception" data-wedding-reveal>
+                        <div class="event-card-header">
+                            <img src="assets/icon_reception.svg" alt="" class="event-card-icon" aria-hidden="true">
+                            <span class="event-tag">EVENT 02 &bull; THE RECEPTION</span>
+                            <h3 class="event-name">RECEPTION</h3>
+                        </div>
+
+                        <div class="event-card-body">
+                            <div class="event-details-list">
+                                <!-- Date -->
+                                <div class="detail-row">
+                                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <div class="detail-content">
+                                        <p class="detail-label">DATE</p>
+                                        <p class="detail-value">Sunday, 03 January 2027</p>
+                                    </div>
+                                </div>
+
+                                <!-- Time -->
+                                <div class="detail-row">
+                                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    <div class="detail-content">
+                                        <p class="detail-label">TIME</p>
+                                        <p class="detail-value">11:30 AM – 8:00 PM</p>
+                                    </div>
+                                </div>
+
+                                <!-- Venue -->
+                                <div class="detail-row">
+                                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    <div class="detail-content">
+                                        <p class="detail-label">VENUE</p>
+                                        <p class="detail-value venue-name">GROOM'S RESIDENCE</p>
+                                        <p class="detail-value venue-address">
+                                            RUBEENAS CHILLIKUNNU ROAD, CHALAD, KANNUR 14
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Button -->
+                            <a href="https://maps.google.com/?q=11.876903,75.353790" target="_blank" rel="noopener noreferrer" class="event-action-btn">
+                                <span>VIEW ON GOOGLE MAPS</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 5. EVENT DETAILS ==================== -->
-        <section class="content-section" id="events-detail" data-framer-name="EventDetails">
-            <div class="section-header" data-reveal="up">
-                <span class="section-script-tag">Schedule &amp; Venues</span>
-                <h2 class="section-title">EVENT DETAILS</h2>
-                <p class="section-subtitle">JOIN US FOR EACH CEREMONY</p>
-                <img src="assets/divider_ornament.svg" alt="" class="section-divider-flower" aria-hidden="true">
-            </div>
-
-            <div class="events-grid">
-                <!-- NIKKAH CARD -->
-                <article class="event-card event-card-nikkah" id="nikkah" data-reveal="up" data-reveal-delay="150">
-                    <div class="event-card-header">
-                        <img src="assets/icon_dome.svg" alt="" class="event-card-icon" aria-hidden="true">
-                        <span class="event-tag">THE CEREMONY</span>
-                        <h3 class="event-name">NIKKAH</h3>
-                    </div>
-
-                    <div class="event-card-body">
-                        <div class="event-details-list">
-                            <!-- Date -->
-                            <div class="detail-row">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <div class="detail-content">
-                                    <p class="detail-label">DATE &bull; DAY 1</p>
-                                    <p class="detail-value">Saturday, 02 January 2027</p>
-                                </div>
-                            </div>
-
-                            <!-- Time -->
-                            <div class="detail-row">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12 6 12 12 16 14"></polyline>
-                                </svg>
-                                <div class="detail-content">
-                                    <p class="detail-label">TIME</p>
-                                    <p class="detail-value">11:00 AM – 3:00 PM</p>
-                                </div>
-                            </div>
-
-                            <!-- Venue -->
-                            <div class="detail-row">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                                <div class="detail-content">
-                                    <p class="detail-label">VENUE</p>
-                                    <p class="detail-value venue-name">ROYAL ALLIANCE AUDITORIUM</p>
-                                    <p class="detail-value venue-address">
-                                        KADALUNDI ROAD, MANNARPADAM, FEROKE, KOZHIKODE, 673631
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Action Button -->
-                        <a href="https://maps.app.goo.gl/1vAmSiUuUUooR2TE8" target="_blank" rel="noopener noreferrer" class="event-action-btn">
-                            <span>VIEW ON GOOGLE MAPS</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- RECEPTION CARD -->
-                <article class="event-card event-card-reception" id="reception" data-reveal="up" data-reveal-delay="300">
-                    <div class="event-card-header">
-                        <img src="assets/icon_reception.svg" alt="" class="event-card-icon" aria-hidden="true">
-                        <span class="event-tag">THE RECEPTION</span>
-                        <h3 class="event-name">RECEPTION</h3>
-                    </div>
-
-                    <div class="event-card-body">
-                        <div class="event-details-list">
-                            <!-- Date -->
-                            <div class="detail-row">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <div class="detail-content">
-                                    <p class="detail-label">DATE &bull; DAY 2</p>
-                                    <p class="detail-value">Sunday, 03 January 2027</p>
-                                </div>
-                            </div>
-
-                            <!-- Time -->
-                            <div class="detail-row">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12 6 12 12 16 14"></polyline>
-                                </svg>
-                                <div class="detail-content">
-                                    <p class="detail-label">TIME</p>
-                                    <p class="detail-value">11:30 AM – 8:00 PM</p>
-                                </div>
-                            </div>
-
-                            <!-- Venue -->
-                            <div class="detail-row">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                                <div class="detail-content">
-                                    <p class="detail-label">VENUE</p>
-                                    <p class="detail-value venue-name">GROOM'S RESIDENCE</p>
-                                    <p class="detail-value venue-address">
-                                        RUBEENAS CHILLIKUNNU ROAD, CHALAD, KANNUR 14
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Action Button -->
-                        <a href="https://maps.google.com/?q=11.876903,75.353790" target="_blank" rel="noopener noreferrer" class="event-action-btn">
-                            <span>VIEW ON GOOGLE MAPS</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- ==================== 6. LOCATIONS ==================== -->
-        <section class="content-section" id="locations" data-framer-name="Locations">
-            <div class="section-header" data-reveal="up">
-                <span class="section-script-tag">Getting There</span>
-                <h2 class="section-title">FIND THE CELEBRATION</h2>
-                <p class="section-subtitle">INTERACTIVE MAPS TO BOTH VENUES</p>
-                <img src="assets/divider_ornament.svg" alt="" class="section-divider-flower" aria-hidden="true">
-            </div>
-
-            <div class="locations-grid">
-                <!-- VENUE 1: FEROKE -->
-                <div class="location-card" data-reveal="up" data-reveal-delay="150">
-                    <div>
-                        <span class="location-district-badge">KOZHIKODE DISTRICT</span>
-                        <h3 class="location-venue-name">ROYAL ALLIANCE AUDITORIUM</h3>
-                        <p class="location-address">
-                            KADALUNDI ROAD, MANNARPADAM, FEROKE, KOZHIKODE, 673631
-                        </p>
-                    </div>
-                    <a href="https://maps.app.goo.gl/1vAmSiUuUUooR2TE8" target="_blank" rel="noopener noreferrer" class="location-map-btn">
-                        <span>OPEN IN GOOGLE MAPS</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- VENUE 2: KANNUR -->
-                <div class="location-card" data-reveal="up" data-reveal-delay="300">
-                    <div>
-                        <span class="location-district-badge">KANNUR DISTRICT</span>
-                        <h3 class="location-venue-name">GROOM'S RESIDENCE</h3>
-                        <p class="location-address">
-                            RUBEENAS CHILLIKUNNU ROAD, CHALAD, KANNUR 14
-                        </p>
-                    </div>
-                    <a href="https://maps.google.com/?q=11.876903,75.353790" target="_blank" rel="noopener noreferrer" class="location-map-btn">
-                        <span>OPEN IN GOOGLE MAPS</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== 7. COUNTDOWN ==================== -->
+        <!-- ==================== 5. COUNTDOWN ==================== -->
         <section class="content-section" id="countdown" data-framer-name="Countdown">
-            <div class="countdown-section-wrap" data-reveal="up">
-                <p class="countdown-heading">The Celebration Begins In</p>
+            <div class="countdown-section-wrap" data-wedding-reveal>
+                <p class="countdown-heading" data-countdown-status>The Celebration Begins In</p>
 
                 <div class="countdown-grid">
                     <div class="countdown-card">
-                        <span class="countdown-number" id="cd-days">00</span>
+                        <span class="countdown-number" data-countdown-days>00</span>
                         <span class="countdown-label">DAYS</span>
                     </div>
                     <div class="countdown-card">
-                        <span class="countdown-number" id="cd-hours">00</span>
+                        <span class="countdown-number" data-countdown-hours>00</span>
                         <span class="countdown-label">HOURS</span>
                     </div>
                     <div class="countdown-card">
-                        <span class="countdown-number" id="cd-minutes">00</span>
+                        <span class="countdown-number" data-countdown-minutes>00</span>
                         <span class="countdown-label">MINUTES</span>
                     </div>
                     <div class="countdown-card">
-                        <span class="countdown-number" id="cd-seconds">00</span>
+                        <span class="countdown-number" data-countdown-seconds>00</span>
                         <span class="countdown-label">SECONDS</span>
                     </div>
                 </div>
+
+                <p class="countdown-fallback-sub" style="margin-top: 20px; font-family: var(--font-sans); font-size: 12px; letter-spacing: 1.5px; color: var(--forest-muted); text-transform: uppercase;">02 JANUARY 2027 · 11:00 AM IST</p>
             </div>
         </section>
 
-        <!-- ==================== 8. CLOSING SECTION ==================== -->
-        <section class="content-section" id="closing" data-framer-name="Closing" data-botanical="closing">
-            <div class="closing-section-wrap" data-botanical-content>
-                <div class="closing-box" data-reveal="up">
+        <!-- ==================== 6. CLOSING SECTION ==================== -->
+        <section class="content-section" id="closing" data-framer-name="Closing" data-wedding-botanical="closing">
+            <div class="closing-section-wrap" data-wedding-content>
+                <div class="closing-box" data-wedding-reveal>
                     <div class="closing-inner-border"></div>
 
                     <h2 class="closing-title">WE LOOK FORWARD TO CELEBRATING WITH YOU</h2>
@@ -1772,7 +1686,7 @@ ${fontFaceCss}
             </div>
         </section>
 
-        <!-- ==================== 9. CLEAN CLIENT-FACING FOOTER ==================== -->
+        <!-- ==================== 7. CLEAN CLIENT-FACING FOOTER ==================== -->
         <footer class="site-footer" data-framer-name="Footer">
             <div class="footer-inner">
                 <div class="footer-left">
@@ -1789,7 +1703,6 @@ ${fontFaceCss}
     <div id="__framer-badge-container"></div>
 
     <script type="module" src="assets/framerusercontent.com/sites/oMyeNIrYwrAPBFlyQ0rhP/script_main.BycT4FBw.mjs"></script>
-    <script src="assets/js/botanical-motion.js" defer></script>
-    <script src="assets/js/hover-bloom.js" defer></script>
+    <script src="assets/js/wedding-motion.js" defer></script>
 </body>
 </html>
